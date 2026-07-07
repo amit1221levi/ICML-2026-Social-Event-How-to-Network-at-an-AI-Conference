@@ -252,19 +252,6 @@
     background: var(--line);
     position: relative;
   }
-  .tl-item::before{
-    content: '';
-    position: absolute;
-    left: 92px;
-    top: 6px;
-    width: 9px;
-    height: 9px;
-    margin-left: -4.5px;
-    border-radius: 50%;
-    background: var(--gold);
-    border: 2px solid var(--paper);
-    outline: 1px solid var(--teal);
-  }
   .tl-content h3{
     font-family: 'Fraunces', serif;
     font-weight: 600;
@@ -353,7 +340,6 @@
   @media (max-width: 700px){
     .info-card{ grid-template-columns: 1fr; }
     .tl-item{ grid-template-columns: 64px 1px 1fr; gap: 14px; }
-    .tl-item::before{ left: 64px; }
   }
 </style>
 </head>
@@ -374,8 +360,8 @@
       <span class="tag">Multi-Agent Systems</span>
       <span class="tag">+ many more</span>
     </div>
-    <p class="lede">Come network with people from your domain — a network-oriented social, built for exactly that.</p>
-    <span class="badge-tag">🎟️ Just show up with your conference badge — no separate registration needed.</span>
+    <p class="lede">Networking at a big conference like ICML can be difficult and intimidating, but it doesn't have to be! Join us for a lighthearted, informal evening of networking tips and hands-on practice.</p>
+    <span class="badge-tag">🎟️ Just show up with your conference badge (optional registration below).</span>
 
     <div class="hero-meta">
       <div class="meta-item">
@@ -384,7 +370,7 @@
       </div>
       <div class="meta-item">
         <span class="meta-k">🗓️ Date &amp; Time</span>
-        <span class="meta-v">19:00 - 21:00 8 Jul 2026 </span>
+        <span class="meta-v">Wednesday July 8th, 7 pm to 9 pm.</span>
       </div>
       <!-- Replace href="#" below with your real registration link (e.g. a Google Form) -->
       <a class="register-btn" href="#" target="_blank" rel="noopener">Register for the Social →</a>
@@ -413,15 +399,52 @@
           <div class="org-text"><span class="name">Amit Levi</span><span class="inst">Technion</span></div>
         </div>
 
-      </div>
+        <div class="org-card">
+          <div class="org-photo">
+            <img src="https://judahgoldfeder.com/images/Yehuda_Goldfeder.jpg" alt="Judah Goldfeder"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="org-initials" style="display:none">JG</div>
+          </div>
+          <div class="org-text"><span class="name">Judah Goldfeder</span><span class="inst">Columbia University</span></div>
+        </div>
 
-      <p class="org-line">
-        <span>Judah Goldfeder <em>(Columbia University)</em></span> ·
-        <span>Philippe Wyder <em>(University of Washington)</em></span> ·
-        <span>Karime Maamari <em>(Distyl AI)</em></span> ·
-        <span>Allen Roush <em>(Thoughtworks)</em></span> ·
-        <span>Ravid Shwartz-Ziv <em>(New York University)</em></span>
-      </p>
+        <div class="org-card">
+          <div class="org-photo">
+            <img src="https://images.squarespace-cdn.com/content/v1/5bba4c27af468381c6d0def3/8b39b94b-b382-43a2-b493-1d45df31acf5/AboutMe.jpg" alt="Philippe Wyder"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="org-initials" style="display:none">PW</div>
+          </div>
+          <div class="org-text"><span class="name">Philippe Wyder</span><span class="inst">University of Washington</span></div>
+        </div>
+
+        <div class="org-card">
+          <div class="org-photo">
+            <img src="https://github.com/maamari.png" alt="Karime Maamari"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="org-initials" style="display:none">KM</div>
+          </div>
+          <div class="org-text"><span class="name">Karime Maamari</span><span class="inst">Distyl AI</span></div>
+        </div>
+
+        <div class="org-card">
+          <div class="org-photo">
+            <img src="https://www.thoughtworks.com/content/dam/thoughtworks/images/photography/thoughtworker-profile/a/pro_Allen%20Roush_NEW.png" alt="Allen Roush"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="org-initials" style="display:none">AR</div>
+          </div>
+          <div class="org-text"><span class="name">Allen Roush</span><span class="inst">Thoughtworks</span></div>
+        </div>
+
+        <div class="org-card">
+          <div class="org-photo">
+            <img src="https://www.ravid-shwartz-ziv.com/author/ravid-shwartz-ziv/avatar_huc80c6842956f28512dde6d2358d67bf5_300147_270x270_fill_q90_lanczos_center.jpg" alt="Ravid Shwartz-Ziv"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="org-initials" style="display:none">RS</div>
+          </div>
+          <div class="org-text"><span class="name">Ravid Shwartz-Ziv</span><span class="inst">New York University</span></div>
+        </div>
+
+      </div>
     </section>
 
     <section aria-labelledby="figure-h">
@@ -479,24 +502,6 @@
       </div>
     </section>
 
-    <section aria-labelledby="logistics-h">
-      <h2 id="logistics-h"><span class="idx">03</span> Room &amp; Setup</h2>
-      <div class="info-card">
-        <div class="field">
-          <span class="k">Duration</span>
-          <span class="v">2 hours</span>
-        </div>
-        <div class="field">
-          <span class="k">Audio / visual</span>
-          <span class="v">Projector and screen; two handheld microphones for organizers</span>
-        </div>
-        <div class="field">
-          <span class="k">Seating</span>
-          <span class="v">Round tables, 8–10 chairs each, for small-group discussion</span>
-        </div>
-      </div>
-    </section>
-
     <section aria-labelledby="schedule-h">
       <h2 id="schedule-h"><span class="idx">04</span> Planned Activities</h2>
       <div class="timeline">
@@ -506,7 +511,7 @@
           <div class="tl-rail"></div>
           <div class="tl-content">
             <h3>The "Why" and "How" of Conference Networking</h3>
-            <p>Organizers deliver a concise, engaging presentation, humorously addressing networking pitfalls and offering a simple framework for conversation to set a collaborative tone.</p>
+            <p>A concise, informal presentation addressing networking pitfalls and offering a simple framework for effective conversation.</p>
           </div>
         </div>
 
@@ -516,10 +521,7 @@
           <div class="tl-content">
             <h3>Structured Icebreakers &amp; Academic Speed-Networking</h3>
             <p>Attendees engage in brief, guided conversations in pairs or small groups, using prompts designed to spark substantive discussion:</p>
-            <ul>
-              <li>"Discuss a paper you've read recently that changed your perspective."</li>
-              <li>"What's the most unexpected challenge you've faced in your research?"</li>
-            </ul>
+            
           </div>
         </div>
 
