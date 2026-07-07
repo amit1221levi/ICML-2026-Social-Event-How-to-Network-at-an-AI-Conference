@@ -1,249 +1,536 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ICML 2026 Social Event: How to Network at an AI Conference</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How to Network at an AI Conference — ICML 2026 Social</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #FBFAF5;
+    --paper-dim: #F3F0E7;
+    --ink: #1C2541;
+    --ink-soft: #45506B;
+    --teal: #2F6F5E;
+    --teal-deep: #1F4E42;
+    --gold: #D89A2E;
+    --coral: #BF5233;
+    --line: #DCD6C6;
+    --card: #FFFFFF;
+    --radius: 14px;
+  }
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #222;
-      line-height: 1.6;
-    }
+  *{ box-sizing: border-box; }
 
-    header {
-      background: linear-gradient(135deg, #1f2937, #4f46e5);
-      color: white;
-      padding: 70px 20px;
-      text-align: center;
-    }
+  html{ scroll-behavior: smooth; }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    header p {
-      font-size: 1.2rem;
-      margin: 0;
-    }
+  .wrap{
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
 
-    main {
-      max-width: 950px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.72rem;
+    color: var(--teal-deep);
+    font-weight: 500;
+  }
 
-    section {
-      background: white;
-      padding: 30px;
-      margin-bottom: 25px;
-      border-radius: 14px;
-      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
-    }
+  /* ---------- HERO ---------- */
+  .hero{
+    background: var(--ink);
+    color: var(--paper);
+    padding: 72px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero .wrap{ position: relative; z-index: 2; }
+  .hero .eyebrow{ color: var(--gold); }
+  .hero h1{
+    font-family: 'Fraunces', serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(2.3rem, 5vw, 3.6rem);
+    line-height: 1.05;
+    margin: 14px 0 18px;
+    max-width: 16ch;
+  }
+  .hero p.lede{
+    max-width: 56ch;
+    font-size: 1.08rem;
+    color: #D9DCE8;
+    margin: 0 0 40px;
+  }
 
-    h2 {
-      color: #1f2937;
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 10px;
-    }
+  /* flocking -> network diagram */
+  .diagram-band{
+    margin-top: 12px;
+    padding: 28px 0 8px;
+    border-top: 1px solid rgba(255,255,255,0.16);
+  }
+  .diagram-caption{
+    display:flex;
+    justify-content: space-between;
+    max-width: 620px;
+    margin: 10px auto 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: #9AA1B8;
+    letter-spacing: 0.04em;
+  }
+  svg.flock{ display:block; margin: 0 auto; width: 100%; max-width: 620px; height: auto; }
+  .dot{ fill: #C7CCE0; }
+  .dot.warm{ fill: var(--gold); }
+  .flock-line{
+    stroke: var(--teal);
+    stroke-width: 1.6;
+    fill: none;
+    stroke-dasharray: 140;
+    stroke-dashoffset: 140;
+    animation: draw 2.4s ease forwards;
+  }
+  .flock-line.d2{ animation-delay: 0.15s; }
+  .flock-line.d3{ animation-delay: 0.3s; }
+  .flock-line.d4{ animation-delay: 0.45s; }
+  .flock-line.d5{ animation-delay: 0.6s; }
+  .flock-line.d6{ animation-delay: 0.75s; }
+  @keyframes draw{ to{ stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce){
+    .flock-line{ animation: none; stroke-dashoffset: 0; }
+  }
 
-    h3 {
-      color: #374151;
-      margin-top: 25px;
-    }
+  /* ---------- MAIN ---------- */
+  main{ padding: 56px 0 20px; }
 
-    .info-box {
-      background: #eef2ff;
-      border-left: 5px solid #4f46e5;
-      padding: 18px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
+  section{ margin-bottom: 58px; }
+  section:last-of-type{ margin-bottom: 30px; }
 
-    .activity {
-      background: #f9fafb;
-      padding: 18px;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      border-left: 4px solid #6366f1;
-    }
+  h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+    color: var(--ink);
+    margin: 0 0 22px;
+    display:flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  h2 .idx{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--teal);
+    font-weight: 500;
+  }
 
-    ul, ol {
-      padding-left: 25px;
-    }
+  .prose p{ color: var(--ink-soft); margin: 0 0 16px; max-width: 68ch; }
+  .prose strong{ color: var(--ink); }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #6b7280;
-      font-size: 0.9rem;
-    }
-  </style>
+  .pull{
+    border-left: 3px solid var(--teal);
+    padding: 4px 0 4px 20px;
+    margin: 26px 0;
+    max-width: 60ch;
+    font-family: 'Fraunces', serif;
+    font-size: 1.12rem;
+    font-style: italic;
+    color: var(--ink);
+  }
+  .pull cite{
+    display:block;
+    margin-top: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-style: normal;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+  }
+
+  /* logistics info card */
+  .info-card{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px 28px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .info-card .field .k{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--teal-deep);
+    display:block;
+    margin-bottom: 6px;
+  }
+  .info-card .field .v{ color: var(--ink); font-size: 0.96rem; }
+
+  /* timeline / schedule */
+  .timeline{
+    position: relative;
+    padding-left: 0;
+  }
+  .tl-item{
+    display: grid;
+    grid-template-columns: 92px 1px 1fr;
+    gap: 22px;
+    padding-bottom: 30px;
+    position: relative;
+  }
+  .tl-item:last-child{ padding-bottom: 0; }
+  .tl-time{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--teal-deep);
+    padding-top: 3px;
+    text-align: right;
+  }
+  .tl-rail{
+    background: var(--line);
+    position: relative;
+  }
+  .tl-item::before{
+    content: '';
+    position: absolute;
+    left: 92px;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    margin-left: -4.5px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--paper);
+    outline: 1px solid var(--teal);
+  }
+  .tl-content h3{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.12rem;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+  .tl-content p{ color: var(--ink-soft); margin: 0 0 10px; max-width: 60ch; }
+  .tl-content ul{ margin: 8px 0 0; padding-left: 20px; color: var(--ink-soft); }
+  .tl-content li{ margin-bottom: 4px; }
+
+  /* organizers */
+  .org-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .org-card{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    display:flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .org-photo{
+    flex: 0 0 auto;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+  }
+  .org-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .org-initials{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--paper);
+    background: var(--teal);
+  }
+  .org-text{ display:flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .org-card .name{ font-weight: 600; color: var(--ink); font-size: 0.98rem; }
+  .org-card .inst{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--teal-deep);
+  }
+  .org-note{
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+
+  /* references */
+  .refs{ list-style: none; padding: 0; margin: 0; }
+  .refs li{
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
+  }
+  .refs li:first-child{ border-top:none; }
+  .refs em{ color: var(--ink); font-style: italic; }
+
+  footer{
+    background: var(--paper-dim);
+    border-top: 1px solid var(--line);
+    padding: 26px 0;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 700px){
+    .info-card{ grid-template-columns: 1fr; }
+    .tl-item{ grid-template-columns: 64px 1px 1fr; gap: 14px; }
+    .tl-item::before{ left: 64px; }
+  }
+</style>
 </head>
-
 <body>
-  <header>
-    <h1>ICML 2026 Social Event</h1>
-    <p>How to Network at an AI Conference</p>
-  </header>
 
-  <main>
-    <section>
-      <h2>Event Overview</h2>
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">ICML 2026 · Social Event</span>
+    <h1>How to Network at an AI Conference</h1>
+    <p class="lede">A structured, slightly irreverent field guide to turning coffee-break small talk into real professional connections — built by a team who met the same way.</p>
 
-      <p>
-        <strong>Event:</strong> ICML 2026 Social Event: How to Network at an AI Conference
-      </p>
+    <div class="diagram-band">
+      <svg class="flock" viewBox="0 0 620 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing isolated clusters of attendees on the left transforming into a connected network on the right">
+        <!-- left: flocking clusters -->
+        <g>
+          <circle class="dot" cx="55" cy="45" r="5"/>
+          <circle class="dot" cx="80" cy="60" r="5"/>
+          <circle class="dot" cx="60" cy="75" r="5"/>
+          <circle class="dot" cx="150" cy="35" r="5"/>
+          <circle class="dot" cx="170" cy="55" r="5"/>
+          <circle class="dot" cx="145" cy="65" r="5"/>
+          <circle class="dot" cx="90" cy="120" r="5"/>
+          <circle class="dot" cx="115" cy="135" r="5"/>
+          <circle class="dot" cx="65" cy="130" r="5"/>
+        </g>
+        <text x="30" y="160" font-family="IBM Plex Mono, monospace" font-size="10" fill="#9AA1B8">ACADEMIC FLOCKING</text>
 
-      <p>
-        <strong>Organizers:</strong> Judah Goldfeder,Daniel Ben Levi ,Columbia University; Amit LeVi, Technion University;
-        Philippe Wyder, University of Washington; Karime Maamari, Distyl AI;
-        Allen Roush, Thoughtworks; and Ravid Schwartz Ziv, New York University.
-      </p>
+        <!-- arrow -->
+        <line x1="235" y1="85" x2="300" y2="85" stroke="#5A6280" stroke-width="1.4"/>
+        <polygon points="300,80 310,85 300,90" fill="#5A6280"/>
 
-      <div class="info-box">
-        <p><strong>Expected Participants:</strong> 150–200</p>
-        <p>
-          <strong>A/V and Setup Requirements:</strong> Projector and screen;
-          two handheld microphones for the organizers; round tables with
-          8–10 chairs each to facilitate small-group discussions.
-        </p>
+        <!-- right: connected network -->
+        <g>
+          <line class="flock-line d1" x1="360" y1="40" x2="420" y2="70"/>
+          <line class="flock-line d2" x1="420" y1="70" x2="480" y2="35"/>
+          <line class="flock-line d3" x1="420" y1="70" x2="410" y2="125"/>
+          <line class="flock-line d4" x1="410" y1="125" x2="480" y2="140"/>
+          <line class="flock-line d5" x1="410" y1="125" x2="350" y2="140"/>
+          <line class="flock-line d6" x1="480" y1="35" x2="555" y2="60"/>
+          <line class="flock-line d3" x1="480" y1="140" x2="555" y2="60"/>
+          <circle class="dot warm" cx="360" cy="40" r="5.5"/>
+          <circle class="dot warm" cx="420" cy="70" r="5.5"/>
+          <circle class="dot warm" cx="480" cy="35" r="5.5"/>
+          <circle class="dot warm" cx="410" cy="125" r="5.5"/>
+          <circle class="dot warm" cx="480" cy="140" r="5.5"/>
+          <circle class="dot warm" cx="350" cy="140" r="5.5"/>
+          <circle class="dot warm" cx="555" cy="60" r="5.5"/>
+        </g>
+        <text x="345" y="160" font-family="IBM Plex Mono, monospace" font-size="10" fill="#9AA1B8">STRUCTURED NETWORK</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section aria-labelledby="org-h">
+      <h2 id="org-h"><span class="idx">01</span> Organizers</h2>
+      <div class="org-grid">
+
+        <div class="org-card">
+          <div class="org-photo">
+            <img src="https://judahgoldfeder.com/images/Yehuda_Goldfeder.jpg" alt="Judah Goldfeder"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="org-initials" style="display:none">JG</div>
+          </div>
+          <div class="org-text"><span class="name">Judah Goldfeder</span><span class="inst">Columbia University</span></div>
+        </div>
+
+        <div class="org-card">
+          <div class="org-photo"><div class="org-initials">DB</div></div>
+          <div class="org-text"><span class="name">Daniel Ben-Levi</span><span class="inst">Columbia University</span></div>
+        </div>
+
+        <div class="org-card">
+          <div class="org-photo">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQELexPqOLcYSg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1729323541768?e=2147483647&v=beta&t=fHqvbhAYSowxQkjfil4OkSnYULNOvRc2-nK76J4yXu0" alt="Amit Levi"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="org-initials" style="display:none">AL</div>
+          </div>
+          <div class="org-text"><span class="name">Amit Levi</span><span class="inst">Technion</span></div>
+        </div>
+
+        <div class="org-card">
+          <div class="org-photo">
+            <img src="https://images.squarespace-cdn.com/content/v1/5bba4c27af468381c6d0def3/8b39b94b-b382-43a2-b493-1d45df31acf5/AboutMe.jpg" alt="Philippe Wyder"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="org-initials" style="display:none">PW</div>
+          </div>
+          <div class="org-text"><span class="name">Philippe Wyder</span><span class="inst">University of Washington</span></div>
+        </div>
+
+        <div class="org-card">
+          <div class="org-photo">
+            <img src="https://github.com/maamari.png" alt="Karime Maamari"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="org-initials" style="display:none">KM</div>
+          </div>
+          <div class="org-text"><span class="name">Karime Maamari</span><span class="inst">Distyl AI</span></div>
+        </div>
+
+        <div class="org-card">
+          <div class="org-photo">
+            <img src="https://www.thoughtworks.com/content/dam/thoughtworks/images/photography/thoughtworker-profile/a/pro_Allen%20Roush_NEW.png" alt="Allen Roush"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="org-initials" style="display:none">AR</div>
+          </div>
+          <div class="org-text"><span class="name">Allen Roush</span><span class="inst">Thoughtworks</span></div>
+        </div>
+
+        <div class="org-card">
+          <div class="org-photo">
+            <img src="https://www.ravid-shwartz-ziv.com/author/ravid-shwartz-ziv/avatar_huc80c6842956f28512dde6d2358d67bf5_300147_270x270_fill_q90_lanczos_center.jpg" alt="Ravid Shwartz-Ziv"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="org-initials" style="display:none">RS</div>
+          </div>
+          <div class="org-text"><span class="name">Ravid Shwartz-Ziv</span><span class="inst">New York University</span></div>
+        </div>
+
+      </div>
+      <p class="org-note">Seven organizers, six institutions, spanning academia and industry — connected through the same kind of networking this session is designed to teach. Photos are pulled live from each organizer's own site or profile; if a link ever changes, that card falls back to initials automatically. Daniel's photo isn't public anywhere yet, so his card shows initials until one is added.</p>
+    </section>
+
+    <section class="prose" aria-labelledby="scope-h">
+      <h2 id="scope-h"><span class="idx">02</span> Scope &amp; Description</h2>
+      <p>Navigating a large academic conference like ICML can be a daunting experience, particularly for those early in their careers or new to the community. The unstructured nature of coffee breaks and receptions often leads to what can only be described as <strong>"academic flocking,"</strong> where attendees gravitate toward familiar faces, inadvertently creating invisible barriers to new connections.</p>
+      <p>This social, <strong>"How to Network at an AI Conference,"</strong> aims to demystify the art of professional connection by transforming it from an anxiety-inducing ordeal into an engaging, fruitful activity — a structured yet informal session equipping attendees with practical, evidence-based strategies for building meaningful professional relationships.</p>
+      <p>Our goal is to move beyond the superficial exchange of pleasantries and business cards. Drawing on research into social dynamics and network theory, we'll explore how genuine, memorable interactions actually form.</p>
+
+      <div class="pull">
+        Successful networking is less about the quantity of connections and more about the quality of interaction — shared interests and authentic curiosity, not collected contacts.
+        Casciaro, Gino &amp; Kouchaki, 2016
+      </div>
+
+      <p>Research also suggests that adopting a <strong>growth mindset</strong> toward social skills meaningfully improves outcomes in professional settings. This social provides a low-stakes environment for like-minded participants to practice these principles, breaking the complex dance of conference socializing into a series of manageable — even enjoyable — steps.</p>
+      <p>The tone will be lighthearted and slightly amusing, acknowledging the inherent awkwardness of networking while giving actionable advice to overcome it. The organizing team is itself a living embodiment of the message: seven people from six institutions across academia and industry, who connected through the very kind of communication this session teaches.</p>
+    </section>
+
+    <section aria-labelledby="logistics-h">
+      <h2 id="logistics-h"><span class="idx">03</span> Room &amp; Setup</h2>
+      <div class="info-card">
+        <div class="field">
+          <span class="k">Duration</span>
+          <span class="v">2 hours</span>
+        </div>
+        <div class="field">
+          <span class="k">Audio / visual</span>
+          <span class="v">Projector and screen; two handheld microphones for organizers</span>
+        </div>
+        <div class="field">
+          <span class="k">Seating</span>
+          <span class="v">Round tables, 8–10 chairs each, for small-group discussion</span>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Scope and Description</h2>
+    <section aria-labelledby="schedule-h">
+      <h2 id="schedule-h"><span class="idx">04</span> Planned Activities</h2>
+      <div class="timeline">
 
-      <p>
-        Navigating a large academic conference like ICML can be a daunting
-        experience, particularly for those early in their careers or new to the
-        community. The unstructured nature of coffee breaks and receptions often
-        leads to what can only be described as “academic flocking,” where
-        attendees gravitate toward familiar faces, inadvertently creating
-        invisible barriers to new connections.
-      </p>
+        <div class="tl-item">
+          <div class="tl-time">0:00–0:15</div>
+          <div class="tl-rail"></div>
+          <div class="tl-content">
+            <h3>The "Why" and "How" of Conference Networking</h3>
+            <p>Organizers deliver a concise, engaging presentation, humorously addressing networking pitfalls and offering a simple framework for conversation to set a collaborative tone.</p>
+          </div>
+        </div>
 
-      <p>
-        This social event, <strong>“How to Network at an AI Conference,”</strong>
-        aims to demystify the art of professional connection by transforming it
-        from an anxiety-inducing ordeal into an engaging and fruitful activity.
-        We propose a structured yet informal session designed to equip attendees
-        with practical, evidence-based strategies for building meaningful
-        professional relationships.
-      </p>
+        <div class="tl-item">
+          <div class="tl-time">0:15–1:00</div>
+          <div class="tl-rail"></div>
+          <div class="tl-content">
+            <h3>Structured Icebreakers &amp; Academic Speed-Networking</h3>
+            <p>Attendees engage in brief, guided conversations in pairs or small groups, using prompts designed to spark substantive discussion:</p>
+            <ul>
+              <li>"Discuss a paper you've read recently that changed your perspective."</li>
+              <li>"What's the most unexpected challenge you've faced in your research?"</li>
+            </ul>
+          </div>
+        </div>
 
-      <p>
-        Our goal is to move beyond the superficial exchange of pleasantries and
-        business cards. Drawing inspiration from research on social dynamics and
-        network theory, we will explore how genuine, memorable interactions are
-        formed. Studies have shown that successful networking is less about the
-        quantity of connections and more about the quality of interactions,
-        emphasizing shared interests and authentic curiosity.
-      </p>
+        <div class="tl-item">
+          <div class="tl-time">1:00–1:45</div>
+          <div class="tl-rail"></div>
+          <div class="tl-content">
+            <h3>Round-Table Discussions: Thematic Deep Dives</h3>
+            <p>Attendees gather at round tables, each carrying a designated theme, facilitated by an organizer or volunteer so everyone gets a chance to contribute:</p>
+            <ul>
+              <li>Navigating academia vs. industry</li>
+              <li>Finding collaborators for side projects</li>
+              <li>Tips for engaging with senior researchers</li>
+            </ul>
+          </div>
+        </div>
 
-      <p>
-        Furthermore, research suggests that adopting a growth mindset toward
-        social skills can significantly improve outcomes in professional
-        settings. This social will provide a low-stakes environment for
-        like-minded participants to practice these principles, breaking down the
-        complex dance of conference socializing into a series of manageable, and
-        even enjoyable, steps.
-      </p>
+        <div class="tl-item">
+          <div class="tl-time">1:45–2:00</div>
+          <div class="tl-rail"></div>
+          <div class="tl-content">
+            <h3>Wrap-Up &amp; Open Mingling</h3>
+            <p>Participants mingle freely — reconnecting with people met earlier or starting new conversations with their newly practiced skills, unstructured and self-directed.</p>
+          </div>
+        </div>
 
-      <p>
-        Our tone will be lighthearted and slightly amusing, acknowledging the
-        inherent awkwardness of networking while providing actionable advice to
-        overcome it. The organizing team itself is a living embodiment of our
-        message: five individuals from five institutions across academia and
-        industry who connected through effective communication and networking.
-      </p>
+      </div>
+      <p class="org-note">The format is deliberately interactive throughout, keeping the focus on social connection and community-building in the spirit of ICML Socials.</p>
     </section>
 
-    <section>
-      <h2>Planned Activities</h2>
-      <p><strong>Total Duration:</strong> 2 hours</p>
-
-      <div class="activity">
-        <h3>1. Introduction: The “Why” and “How” of Conference Networking</h3>
-        <p><strong>Duration:</strong> 15 minutes</p>
-        <p>
-          Organizers will deliver a concise and engaging presentation,
-          humorously addressing common networking pitfalls and offering a simple
-          framework for conversation to foster a collaborative atmosphere.
-        </p>
-      </div>
-
-      <div class="activity">
-        <h3>2. Structured Icebreakers and Academic Speed-Networking</h3>
-        <p><strong>Duration:</strong> 45 minutes</p>
-        <p>
-          Attendees will engage in brief, guided conversations in pairs or small
-          groups using specific prompts to encourage substantive discussion.
-        </p>
-        <ul>
-          <li>Discuss a paper you have read recently that changed your perspective.</li>
-          <li>What is the most unexpected challenge you have faced in your research?</li>
-        </ul>
-      </div>
-
-      <div class="activity">
-        <h3>3. Round-Table Discussions: Thematic Deep Dives</h3>
-        <p><strong>Duration:</strong> 45 minutes</p>
-        <p>
-          Attendees will gather at round tables, each with a designated theme.
-          Possible discussion themes include:
-        </p>
-        <ul>
-          <li>Navigating academia versus industry</li>
-          <li>Finding collaborators for side projects</li>
-          <li>Tips for engaging with senior researchers</li>
-        </ul>
-        <p>
-          Table discussions will be facilitated by an organizer or volunteer,
-          ensuring that everyone has an opportunity to contribute and fostering
-          deeper connections based on shared professional interests and challenges.
-        </p>
-      </div>
-
-      <div class="activity">
-        <h3>4. Wrap-Up and Open Mingling</h3>
-        <p><strong>Duration:</strong> 15 minutes</p>
-        <p>
-          The final portion of the event allows participants to mingle with
-          individuals they met during the structured activities or to initiate
-          new conversations using their newly honed skills in an unstructured
-          setting.
-        </p>
-      </div>
-
-      <p>
-        This format is designed to be highly interactive, ensuring that the
-        focus remains squarely on social connection and community building, in
-        line with the spirit of ICML Socials.
-      </p>
-    </section>
-
-    <section>
-      <h2>References</h2>
-      <ol>
-        <li>
-          Casciaro, T., Gino, F., & Kouchaki, M. (2016).
-          <em>Learn to Love Networking.</em> Harvard Business Review, 94(5), 1–9.
-        </li>
-        <li>
-          Dweck, C. S. (2006).
-          <em>Mindset: The New Psychology of Success.</em> Random House.
-        </li>
+    <section aria-labelledby="refs-h">
+      <h2 id="refs-h"><span class="idx">05</span> References</h2>
+      <ol class="refs">
+        <li>Casciaro, T., Gino, F., &amp; Kouchaki, M. (2016). <em>Learn to Love Networking.</em> Harvard Business Review, 94(5), 1–9.</li>
+        <li>Dweck, C. S. (2006). <em>Mindset: The New Psychology of Success.</em> Random House.</li>
       </ol>
     </section>
-  </main>
 
-  <footer>
-    ICML 2026 Social Event: How to Network at an AI Conference
-  </footer>
+  </div>
+</main>
+
+<footer>ICML 2026 · SOCIAL EVENT · HOW TO NETWORK AT AN AI CONFERENCE</footer>
+
 </body>
 </html>
